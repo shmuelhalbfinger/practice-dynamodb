@@ -27,7 +27,7 @@ public class UserController {
         return userEntities.stream().map(userMapper::mapToUser).collect(Collectors.toList());
     }
 
-    @PostMapping(value = "user")
+    @PostMapping(value = "/user")
     public User createUser(@RequestBody User user) {
         return userMapper.mapToUser(userRepository.save(userMapper.mapToUserEntity(user)));
     }
